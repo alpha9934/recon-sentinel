@@ -48,8 +48,8 @@ class of problem you'd find in BFSI messaging/settlement operations.
     python3 demo.py --break-id BRK-TM-012
 -->
 
-> 📹 *Demo video goes here — see the instructions in this file's source
-> (view raw / edit) for how to embed it once recorded.*
+
+[▶️ Watch the demo](https://github.com/alpha9934/recon-sentinel/blob/master/docs/demo.mp4)
 
 ---
 
