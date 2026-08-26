@@ -1,0 +1,12 @@
+anthropic>=0.40
+langgraph>=0.2
+langchain-core>=0.3
+langchain-core>=0.3
+pydantic>=2.7
+mcp>=1.0,<2.0  # v2.0 restructured FastMCP's location — pin to 1.x for this API shape
+langfuse>=2.0
+ragas>=0.1
+deepeval>=1.0
+faiss-cpu>=1.8
+python-dotenv>=1.0
+pytest>=8.0

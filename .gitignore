@@ -1,0 +1,11 @@
+.env
+test*.py
+*.zip
+BUILD_PLAN.md
+.env
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.db
+run_local.py

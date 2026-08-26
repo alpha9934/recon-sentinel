@@ -1,0 +1,27 @@
+[
+  {
+    "id": "RB-001",
+    "title": "Settlement batch timing race",
+    "text": "If a settlement batch job starts before the upstream gateway feed has fully settled, the ledger will show a posted transaction with no matching settlement record. Resolution: re-run the settlement batch after confirming the gateway feed's settled status. Recurrence prevention: add a feed-settled precondition check before batch start."
+  },
+  {
+    "id": "RB-002",
+    "title": "Post-deploy field mapping break",
+    "text": "A schema change (field rename or type change) deployed to a downstream service without a corresponding update to the ingestion mapping causes silent data corruption — commonly amounts recorded as zero or null. Check deploy_events for schema_change entries in the incident window before assuming a data-source problem. Resolution: flag for engineering review, do not auto-resolve."
+  },
+  {
+    "id": "RB-003",
+    "title": "Duplicate submission to payment gateway",
+    "text": "Client-side retry logic without idempotency keys can submit the same transaction twice to the payment gateway, causing settlement to record double the ledger amount. Look for two gateway records with the same txn_ref within a short time window. Resolution: flag for review, do not auto-mark-resolved since a refund/reversal may be needed."
+  },
+  {
+    "id": "RB-004",
+    "title": "Currency rounding drift",
+    "text": "Small sub-currency-unit differences between gateway and settlement amounts are usually explained by differing rounding modes (round-half-up vs round-half-even) in currency conversion. If the drift is below the currency's minor-unit threshold, it is safe to mark resolved without further investigation."
+  },
+  {
+    "id": "RB-014",
+    "title": "Expected clock skew between ledger and settlement hosts",
+    "text": "Timestamp deltas under roughly five seconds between core_ledger and settlement host clocks are within known NTP synchronization tolerance and are not a true reconciliation break. These self-resolve and should be suppressed rather than escalated, provided amount and txn_ref otherwise match exactly."
+  }
+]

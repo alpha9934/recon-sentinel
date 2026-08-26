@@ -1,0 +1,42 @@
+{
+  "n_cases": 10,
+  "rca_top1_accuracy": 0.7,
+  "rca_top3_accuracy": 0.8,
+  "false_action_rate": 0.0,
+  "avg_faithfulness": 0.4117,
+  "calibration": {
+    "[0.0-0.5]": {
+      "n": 0,
+      "n_correct": 0,
+      "conf_sum": 0.0,
+      "avg_conf": 0.0
+    },
+    "[0.5-0.7]": {
+      "n": 0,
+      "n_correct": 0,
+      "conf_sum": 0.0,
+      "avg_conf": 0.0
+    },
+    "[0.7-0.9]": {
+      "n": 6,
+      "n_correct": 4,
+      "conf_sum": 5.1,
+      "avg_conf": 0.85
+    },
+    "[0.9-1.0]": {
+      "n": 4,
+      "n_correct": 3,
+      "conf_sum": 3.7700000000000005,
+      "avg_conf": 0.9425000000000001
+    }
+  },
+  "passes_ci_gate": false,
+  "thresholds": {
+    "rca_top1_accuracy": 0.6,
+    "rca_top3_accuracy": 0.85,
+    "false_action_rate_max": 0.25,
+    "faithfulness_min": 0.5
+  },
+  "errors": [],
+  "generated_at": "2026-08-26T14:31:37.833188"
+}

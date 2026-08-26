@@ -1,0 +1,43 @@
+name: Eval regression gate
+
+# Runs the eval harness whenever a PR touches anything that could change
+# diagnosis behavior: the DIAGNOSE prompt/logic, evidence gathering,
+# action classification, or the golden dataset itself. Does NOT run on
+# every PR — most changes (docs, MCP server plumbing, test scaffolding)
+# can't move these metrics, and burning API calls on every PR is wasteful.
+on:
+  pull_request:
+    paths:
+      - "graph/nodes.py"
+      - "graph/llm_client.py"
+      - "graph/evidence_gathering.py"
+      - "eval/**"
+      - "data/synthetic/golden_incidents.jsonl"
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run eval harness against golden dataset
+        env:
+          # Set this as a repo secret (Settings -> Secrets -> Actions).
+          # Without it, diagnose_node fails closed on every case and the
+          # gate will correctly fail — that's expected, not a workflow bug.
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 eval/harness.py
+
+      - name: Upload eval report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-report
+          path: eval/last_report.json
