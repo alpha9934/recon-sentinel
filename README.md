@@ -49,7 +49,7 @@ class of problem you'd find in BFSI messaging/settlement operations.
 -->
 
 
-[▶️ Watch the demo](https://github.com/alpha9934/recon-sentinel/blob/master/docs/demo.mp4)
+[▶️ Watch the demo](https://raw.githubusercontent.com/alpha9934/recon-sentinel/master/docs/demo.mp4)
 
 ---
 
