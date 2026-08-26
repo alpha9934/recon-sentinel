@@ -11,45 +11,16 @@ class of problem you'd find in BFSI messaging/settlement operations.
 
 ---
 
+
+
+
 ## 🎥 Demo video
 
-<!--
-  RECORD YOUR DEMO, THEN REPLACE THIS SECTION.
+[![Recon Sentinel Demo](https://img.youtube.com/vi/eUw8bOiE0wg/maxresdefault.jpg)](https://youtu.be/eUw8bOiE0wg)
 
-  Easiest path (renders natively in GitHub's README preview):
-    1. Open this README.md file directly in the GitHub web UI editor
-       (or drag-and-drop into a new GitHub Issue/PR comment box — either
-       surface accepts file uploads).
-    2. Drag your recorded demo.mp4 (or demo.gif) into the edit box.
-       GitHub uploads it and auto-inserts a working link like:
-         https://github.com/user-attachments/assets/xxxxxxxx-xxxx-xxxx
-    3. Copy that generated line into this README in place of the
-       placeholder below, then commit.
+*Click the thumbnail to watch the full walkthrough — MONITOR → TRIAGE → DIAGNOSE →
+PLAN ACTION → HUMAN APPROVAL (real interrupt) → ACT → VERIFY → REFLECT.*
 
-  Local/offline alternative: save the recording to docs/demo.mp4 in this
-  repo and reference it with a plain relative link — it won't play
-  inline everywhere (e.g. it won't autoplay on PyPI or some renderers),
-  but it's clickable and downloadable on GitHub:
-
-    [Watch the demo](docs/demo.mp4)
-
-  Recording checklist (matches demo.py's narrated sections):
-    - [ ] MONITOR -> TRIAGE: real evidence gathered from the 3 read MCP servers
-    - [ ] DIAGNOSE: the one real LLM call, ranked hypotheses with cited evidence
-    - [ ] PLAN ACTION: deterministic action classification
-    - [ ] HUMAN APPROVAL: the halt — narrate that this is a real graph
-          interrupt with checkpointed state, not a prompt-level instruction
-    - [ ] Approve it (type `y`), show the resume
-    - [ ] ACT -> VERIFY: real DB write, real re-check that it actually worked
-    - [ ] REFLECT: persisted to episodic memory
-    - [ ] (bonus) run demo.py --reject once to show the escalation path too
-
-  Suggested recording command:
-    python3 demo.py --break-id BRK-TM-012
--->
-
-
-[▶️ Watch the demo](https://raw.githubusercontent.com/alpha9934/recon-sentinel/master/docs/demo.mp4)
 
 ---
 
